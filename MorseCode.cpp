@@ -10,26 +10,24 @@ string encode(char c);
 int main()
 {
     string input = "";
-    cout << "Please enter morse code to be decoded : ";
+    cout << "Please enter morse code to be decoded: ";
     getline(cin, input);
 
     string const morsecode[] = {".-", "-...", "-.-.", "-..", ".", "..-.",            
     "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-",
-    ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
+    ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}; 
 
     cout << decode(input, morsecode) << endl;
-
   string morse_ip;
-  cout << "Please enter morse code to be encoded : ";
+  cout << "Please enter morse code to be encoded: "; 
   getline(cin, morse_ip);
-  string morse="";
-y
+  string morse=""; 
+
   for(int i=0; i<morse_ip.length(); i++)
        {
          morse += encode(tolower(morse_ip[i]));      
        }
  cout<<morse<<endl;
-
 return 0;
 }
 
@@ -43,24 +41,23 @@ string decode(string morse, string const morsecode[])
 
     while(ss >> currentLetter)
     {
-        size_t index = 0;
+        size_t index = 0; 
         while(currentLetter != morsecode[index] && index < characters)
         {
             ++index;                   
         }
 
         output += 'A' + index;
-    }
+    } 
 
     return output;
 }
-string encode(char c)
-{
+string encode(char c) { 
 	string text = "abcdefghijklmnopqrstuvwqyz";
 	string morse[] = {".-","-...","-.-.","-..", ".", "..-.", "--.",
-					  "....", "..", ".---", "-.-", ".-..", "--",
+					  "....", "..", ".---", "-.-", ".-..", "--", 
 				      "-.", "---", ".--.", "--.-", ".-.", "...", "-",
-				      "..-", "...-", ".--", "-..-", "-.--", "--.."};
+				      "..-", "...-", ".--", "-..-", "-.--", "--.."}; 
 	  int index = text.find(c);
 	    if(index!=-1)
             return morse[index];
