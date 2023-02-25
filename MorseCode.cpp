@@ -1,21 +1,16 @@
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <cctype>                                             
+#include<bits/stdc++.h>
 using namespace std;
 
 string decode(string morse, string const morsecode[]);           
 string encode(char c);                                     
-
-int main()
-{
+int main(){
     string input = "";
-    cout << "Please enter morse code to be decoded: ";
+    cout << "Please enter a single morse code seperated by a space to be decoded: ";
     getline(cin, input);
-
-    string const morsecode[] = {".-", "-...", "-.-.", "-..", ".", "..-.",            
-    "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-",
-    ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}; 
+    string const morsecode[] = {
+        ".-",   "-...", "-.-.", "-..",  ".",   "..-.", "--.",  "....", "..",
+        ".---", "-.-",  ".-..", "--",   "-.",  "---",  ".--.", "--.-", ".-.",
+        "...",  "-",    "..-",  "...-", ".--", "-..-", "-.--", "--.."};
 
     cout << decode(input, morsecode) << endl;
   string morse_ip;
@@ -29,34 +24,26 @@ int main()
  cout<<morse<<endl;
 return 0;
 }
-
-string decode(string morse, string const morsecode[])
-{
+string decode(string morse, string const morsecode[]){
     string output = "";
     string currentLetter = "";
     istringstream ss(morse);
-
     size_t const characters = 26;
-
-    while(ss >> currentLetter)
-    {
-        size_t index = 0; 
-        while(currentLetter != morsecode[index] && index < characters)
-        {
-            ++index;                   
+    while(ss >> currentLetter){
+        size_t index = 0;
+        while(currentLetter != morsecode[index] && index < characters){
+            ++index;
         }
-
         output += 'A' + index;
-    } 
-
+    }
     return output;
 }
-string encode(char c) { 
+string encode(char c){ 
 	string text = "abcdefghijklmnopqrstuvwqyz";
 	string morse[] = {".-","-...","-.-.","-..", ".", "..-.", "--.",
-					  "....", "..", ".---", "-.-", ".-..", "--", 
+					  "....", "..", ".---", "-.-", ".-..", "--",
 				      "-.", "---", ".--.", "--.-", ".-.", "...", "-",
-				      "..-", "...-", ".--", "-..-", "-.--", "--.."}; 
+				     "..-", "...-", ".--", "-..-", "-.--", "--.."};
 	  int index = text.find(c);
 	    if(index!=-1)
             return morse[index];
