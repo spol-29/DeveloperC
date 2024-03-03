@@ -64,7 +64,7 @@ int main(){
         }else{
             cout << "Invalid input. Please try again in the next process." << endl;
         }
-        cout << "Would you like to run another process? (Y/N)[Non-Case Sensitive]" << endl;
+        cout << "Would you like to run another process? (Y/n)[Non-Case Sensitive]" << endl;
         cin >> rerun_process;
         if(rerun_process == 'Y' || rerun_process == 'y'){
             continue;
@@ -72,7 +72,7 @@ int main(){
             rerun = false;
             break;
         }else{
-            cout << "Invalid input. Please try again in the next process." << endl;
+            rerun = true;
         }
         process = " ";
         num1 = 0; num2 = 0;

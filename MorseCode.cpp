@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string decode(string morse, string const morsecode[]);           
-string encode(char c);                                     
+string decode(string morse, string const morsecode[]);
+string encode(char c);
 int main(){
     string input = "";
     cout << "Please enter a single morse code seperated by a space to be decoded: ";
@@ -13,12 +13,12 @@ int main(){
         "...",  "-",    "..-",  "...-", ".--", "-..-", "-.--", "--.."};
     cout << decode(input, morsecode) << endl;
   string morse_ip;
-  cout << "Please enter morse code to be encoded: "; 
+  cout << "Please enter morse code to be encoded: ";
   getline(cin, morse_ip);
-  string morse=""; 
+  string morse="";
 
   for(int i=0; i<morse_ip.length(); i++){
-         morse += encode(tolower(morse_ip[i]));      
+         morse += encode(tolower(morse_ip[i]));
        }
  cout<<morse<<endl;
 return 0;
@@ -37,7 +37,7 @@ string decode(string morse, string const morsecode[]){
     }
     return output;
 }
-string encode(char c){ 
+string encode(char c){
 	string text = "abcdefghijklmnopqrstuvwqyz";
 	string morse[] = {".-","-...","-.-.","-..", ".", "..-.", "--.",
 					  "....", "..", ".---", "-.-", ".-..", "--",
